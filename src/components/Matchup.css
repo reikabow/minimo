@@ -1,0 +1,10 @@
+#matchup {
+  margin-top: 30vh;
+  text-align: center;
+}
+
+#matchup-row {
+  display: block;
+  margin: 0 auto;
+  max-width: 50vw;
+}
