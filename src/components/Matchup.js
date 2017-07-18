@@ -1,4 +1,6 @@
 import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
+
 import { Row, Col, Card, Button } from 'antd';
 
 // TODO : STOP RANDOMLY GENERATING OUT OF BOUNDS AFTER CONTESTANTS ARE 
@@ -30,24 +32,43 @@ const Matchup = props => {
     props.setMatchup(newAId, newBId);
 
   return (
-    <div id="matchup">
-      <Row id="matchup-row" gutter={ 8 } style={{ margin: "1.5em auto" }}>
+    <div className={ css(styles.page) }>
+      <Row gutter={ 8 }>
         <Col span={ 12 }>
-          <Card onClick={ () => handleClick(aId, bId) }>
+          <Card className={ css(styles.card) } onClick={ () => handleClick(aId, bId) }>
             <span>{ a }</span>
           </Card>
         </Col>
         <Col span={ 12 }>
-          <Card onClick={ () => handleClick(bId, aId) }>
+          <Card className={ css(styles.card) } onClick={ () => handleClick(bId, aId) }>
             <span>{ b }</span>
           </Card>
         </Col>
       </Row>
-      <Button onClick={ goToAddScreen }>
+      <Button className={ css(styles.button) } onClick={ goToAddScreen }>
         Back
       </Button>
     </div>
   );
 };
+
+const styles = StyleSheet.create({
+  page: {
+    width: '80vw',
+    display: 'block',
+    margin: '30vh auto'
+  },
+
+  button: {
+    width: '20em',
+    display: 'block',
+    margin: '1.35em auto'
+  },
+
+  card: {
+    textAlign: 'center',
+    fontSize: '1.35em'
+  }
+});
 
 export default Matchup;
