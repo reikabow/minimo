@@ -1,12 +1,12 @@
-export const ADD_NEWCOMER = 'ADD_NEWCOMER';
-export const REMOVE_NEWCOMER = 'REMOVE_NEWCOMER';
+export const ADD_NEWCOMER = Symbol('ADD_NEWCOMER');
+export const REMOVE_NEWCOMER = Symbol('REMOVE_NEWCOMER');
 
-export const MERGE_NEWCOMERS = 'MERGE_NEWCOMERS';
-export const REMOVE_CONTESTANT = 'REMOVE_CONTESTANT';
+export const MERGE_NEWCOMERS = Symbol('MERGE_NEWCOMERS');
+export const REMOVE_CONTESTANT = Symbol('REMOVE_CONTESTANT');
 
-export const SET_SCREEN = 'SET_SCREEN';
-export const CHOOSE_MATCH = 'CHOOSE_MATCH';
-export const DECIDE_MATCH = 'DECIDE_MATCH';
+export const SET_SCREEN = Symbol('SET_SCREEN');
+export const CHOOSE_MATCH = Symbol('CHOOSE_MATCH');
+export const DECIDE_MATCH = Symbol('DECIDE_MATCH');
 
 export const SCREENS = {
   TITLE: 'TITLE',
