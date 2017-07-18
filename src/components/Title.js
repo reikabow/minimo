@@ -13,9 +13,9 @@ const Title = props => (
       transitionLeaveTimeout={ 500 }
     >
       <h1>MINIMO</h1>
+      <span>Pit your belongings against each other</span>
       <span>See how they stack up in utility</span>
       <span>Minimalize your life</span>
-      <span>Pit your belongings against each other</span>
       <Button autoFocus={ true } onClick={ props.handleClick }>Enter</Button>
     </ReactCSSTransitionGroup>
   </div>
