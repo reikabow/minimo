@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 import { Input, Button } from 'antd';
@@ -6,6 +6,7 @@ import { trim } from 'lodash/string';
 
 const ContestantList = props => (
   <div className={ css(styles.contestantList) }>
+    <h3>Utility ranking</h3>
     {
       props.contestants.map((c, i) => 
         <div onClick={ () => props.handleRemove(i) } key={ i }>
@@ -17,6 +18,7 @@ const ContestantList = props => (
 
 const NewcomersList = props => (
   <div className={ css(styles.contestantList) }>
+    <h3>Items to be added</h3>
     {
       props.newcomers.map((c, i) =>
         <div key={ i }>
@@ -27,9 +29,8 @@ const NewcomersList = props => (
 )
 
 const addNewcomer = (e, add) => {
-  console.log(e.target.value);
   const c = trim(e.target.value);
-  if (c == '') return;
+  if (c === '') return;
   else add(c);
   e.target.value = '';
 }
@@ -45,7 +46,14 @@ const Add = props => (
       placeholder="Type belonging here and press 'Enter'"
     />
     { props.newcomers.length + props.contestants.length > 3 
-      ? <Button className={ css(styles.minButton) } onClick={ () => { props.handleMerge(props.newcomers), props.handleMinClick(); } }>Minimalize</Button>
+      ? <Button
+          className={ css(styles.minButton) } 
+          onClick={ () =>
+            { props.handleMerge(props.newcomers); props.handleMinClick(); }
+          }
+        >
+          Minimalize
+        </Button>
       : <div></div>  }
   </div>
 );
@@ -54,27 +62,18 @@ const styles = StyleSheet.create({
   input: {
     width: '20em',
     display: 'block',
-    position: 'absolute',
-    bottom: '25%',
-    left: '0',
-    right: '0',
     margin: '0 auto'
   },
 
   minButton: {
-    position: 'absolute',
-    bottom: '30%',
-    left: '0',
-    right: '0',
     width: '10em',
     display: 'block',
-    margin: '0 auto'
+    margin: '1em auto'
   },
 
   contestantList: {
-    marginTop: '5em',
     display: 'block',
-    margin: '0 auto',
+    margin: '5em auto',
     width: '20em',
     height: '20%',
     overflowY: 'scroll'

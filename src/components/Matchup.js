@@ -18,9 +18,7 @@ const getRandomMatchup = (ceil, aId, bId) => {
 }
 
 const Matchup = props => {
-  const { handleDecision, setMatchup, aId, bId, a, b, numContestants, goToAddScreen } = props;
-  console.log(props);
-  
+  const { handleDecision, setMatchup, aId, bId, a, b, numContestants, goToAddScreen } = props;  
   const {newAId, newBId} = getRandomMatchup(numContestants, aId, bId);
 
   const handleClick = (winnerId, loserId) => {
@@ -33,16 +31,17 @@ const Matchup = props => {
 
   return (
     <div className={ css(styles.page) }>
+      <span>Click the most useful item of the two displayed.</span>
       <Row gutter={ 8 }>
         <Col span={ 12 }>
-          <Card className={ css(styles.card) } onClick={ () => handleClick(aId, bId) }>
+          <Button className={ css(styles.card) } onClick={ () => handleClick(aId, bId) }>
             <span>{ a }</span>
-          </Card>
+          </Button>
         </Col>
         <Col span={ 12 }>
-          <Card className={ css(styles.card) } onClick={ () => handleClick(bId, aId) }>
+          <Button className={ css(styles.card) } onClick={ () => handleClick(bId, aId) }>
             <span>{ b }</span>
-          </Card>
+          </Button>
         </Col>
       </Row>
       <Button className={ css(styles.button) } onClick={ goToAddScreen }>
@@ -56,7 +55,8 @@ const styles = StyleSheet.create({
   page: {
     width: '80vw',
     display: 'block',
-    margin: '30vh auto'
+    margin: '30vh auto',
+    textAlign: 'center'
   },
 
   button: {
@@ -66,6 +66,9 @@ const styles = StyleSheet.create({
   },
 
   card: {
+    marginTop: '1em',
+    width: '100%',
+    height: '3em',
     textAlign: 'center',
     fontSize: '1.35em'
   }

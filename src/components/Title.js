@@ -1,6 +1,7 @@
 import React from 'react';
-import Button from 'antd/lib/button';
 import { StyleSheet, css } from 'aphrodite';
+
+import Button from 'antd/lib/button';
 
 const Title = props => (
   <div className={ css(styles.page) }>
