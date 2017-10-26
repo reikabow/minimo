@@ -7,6 +7,9 @@ Minimo is a web application that seeks to help reduce clutter.
 3. Get a list of your belongings, ranked in utility
 4. Choose items to get rid of according to these rankings
 5. Repeat
+6. ???
+7. Profit
+8. https://www.youtube.com/watch?v=9efmoXY3__I
 
 ## Installation
 
